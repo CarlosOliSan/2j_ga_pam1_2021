@@ -14,20 +14,24 @@
       <ion-label position="floating"> <!--Texto da caixa de texto-->
         Login
       </ion-label>
-      <ion-input></ion-input> <!--Caixa de texto-->
+      <ion-input [(ngModel)]="login"></ion-input> <!--Caixa de texto-->
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">
         Senha
       </ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
     </ion-item>
 
     <div>
-      <ion-button color="primary" size="block" id="botao">
+      <ion-button color="primary" expand="block" (click)="validar()">
         Entrar
       </ion-button>
+    </div>
+
+    <div>
+      {{mensagem}}
     </div>
 
   </div>
