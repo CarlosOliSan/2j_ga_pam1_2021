@@ -6,17 +6,34 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  login = '';
-  senha = '';
-  mensagem = '';
+  num1 = null;
+  num2 = null;
+  resposta = '';
+
 
   constructor() {}
 
-  validar(): void{
-    if(this.login === 'admin' && this.senha === '1234'){
-      this.mensagem = 'Usuário logado!';
+  somar(): void{
+    this.resposta = this.num1 + this.num2;
+  }
+
+  subtrair(): void{
+    let r = this.num1 - this.num2;
+    this.resposta = r.toString();
+  }
+
+  multiplicar(): void{
+    let r = this.num1 * this.num2;
+    this.resposta = r.toString();
+  }
+
+  dividir(): void{
+    if(this.num2 == 0){
+      this.resposta = "Erro! o segundo número não pode ser igual a 0"
     } else{
-      this.mensagem = 'Falha de autenticação';
+      let r = this.num1 / this.num2;
+      this.resposta = r.toString();
+      ;
     }
   }
 

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primar">
+  <ion-toolbar>
     <ion-title>
-      Nubanko
+      CALCULADORA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,29 +10,51 @@
 
   <div id="container">
 
-    <ion-item> <!--Criar item-->
-      <ion-label position="floating"> <!--Texto da caixa de texto-->
-        Login
+    <ion-item>
+      <ion-label position="floating">
+        1° Número
       </ion-label>
-      <ion-input [(ngModel)]="login"></ion-input> <!--Caixa de texto-->
+      <ion-input type="number" [(ngModel)]="num1"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">
-        Senha
+        2° Número
       </ion-label>
-      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+      <ion-input type="number" [(ngModel)]="num2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Resultado=
+      </ion-label>
+      <p> {{ resposta }} </p>
     </ion-item>
 
     <div>
-      <ion-button color="primary" expand="block" (click)="validar()">
-        Entrar
+      <ion-button type="button" color="medium" expand="block" (click)="somar()">
+        Somar
       </ion-button>
     </div>
 
     <div>
-      {{mensagem}}
+      <ion-button type="button" color="medium" expand="block" (click)="subtrair()">
+        Subtrair
+      </ion-button>
+    </div>
+
+    <div>
+      <ion-button type="button" color="medium" expand="block" (click)="multiplicar()">
+        Multiplicar
+      </ion-button>
+    </div>
+
+    <div>
+      <ion-button type="button" color="medium" expand="block"(click)="dividir()">
+        Dividir
+      </ion-button>
     </div>
 
   </div>
+
 </ion-content>
